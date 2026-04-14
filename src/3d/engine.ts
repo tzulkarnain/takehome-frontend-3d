@@ -103,9 +103,7 @@ export default class ThreeEngineController {
       throw new Error('Scene is not initialized')
     }
     let count = 0
-    this.scene.traverse(() => {
-      count++
-    })
+    this.scene.children.forEach(child => child.traverse(() => { count++ }))
     return count
   }
 
